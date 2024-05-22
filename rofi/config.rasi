@@ -3,7 +3,7 @@ modes: "run";
 font: "Terminess Nerd Font 13";
 disable-history: true;
 sort: true;
-sorting-method: "levenshtein";
+sorting-method: "fzf";
 case-sensitive: true;
 click-to-exit: false;
 }
