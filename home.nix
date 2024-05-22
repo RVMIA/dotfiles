@@ -24,9 +24,6 @@
     pkgs.git
     pkgs.gh
 
-    # Compilers
-    pkgs.libgcc
-
     # Xmonad
     pkgs.ghc
     pkgs.xmobar
