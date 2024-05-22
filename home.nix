@@ -28,7 +28,8 @@
     pkgs.ghc
     pkgs.xmobar
     pkgs.alacritty
-    pkgs.dmenu
+    pkgs.rofi
+    pkgs.terminus-nerdfont
     pkgs.nitrogen
 
     pkgs.xfce.thunar
@@ -52,11 +53,14 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/nvim".source = "${builtins.fetchGit {
+		name = "ameNvim";
 		url = "https://github.com/RVMIA/kickstart.nvim";
 	}}";
     ".config/xmonad".source = "${builtins.fetchGit {
-	  url = "https://github.com/RVMIA/xmonad";
+		name = "ameXMonad";
+	        url = "https://github.com/RVMIA/xmonad";
 	}}";
+    ".config/rofi".source = ./rofi;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
