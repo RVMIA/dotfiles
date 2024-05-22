@@ -111,13 +111,13 @@
 	};
 	displayManager = {
 		autoLogin = { 
-			enable = true; 
+			enable = false; 
 			user = "ame"; 
 		};
 		defaultSession = "none+xmonad";
 		lightdm = {
 			enable = true;
-			greeter.enable = false;
+			greeter.enable = true;
 
 		};
 		
