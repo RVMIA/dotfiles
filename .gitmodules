@@ -1,6 +1,0 @@
-[submodule "nvim"]
-	path = nvim
-	url = https://github.com/RVMIA/kickstart.nvim
-[submodule "xmonad"]
-	path = xmonad
-	url = https://github.com/RVMIA/xmonad

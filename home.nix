@@ -52,12 +52,11 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = "${builtins.fetchGit {
-		name = "ameNvim";
-		url = "https://github.com/RVMIA/kickstart.nvim";
-	}}";
+    ".config/nvim".source = ./nvim;
     ".config/xmonad".source = ./xmonad;
     ".config/rofi".source = ./rofi;
+    ".config/zsh".source = ./zsh;
+    ".config/alacritty".source = ./alacritty;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
