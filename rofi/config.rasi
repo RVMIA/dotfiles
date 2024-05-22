@@ -1,0 +1,9 @@
+configuration {
+modes: "run";
+font: "Terminess Nerd Font 13";
+disable-history: true;
+sort: true;
+sorting-method: "levenshtein";
+case-sensitive: true;
+click-to-exit: false;
+}
