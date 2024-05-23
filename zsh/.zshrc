@@ -52,6 +52,8 @@ export GHCUP_USE_XDG_DIRS=true
 export W3M_DIR=$XDG_DATA_HOME/w3m
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 
+export NIX_REMOTE=daemon
+
 # PATH
 typeset -U path
 export PATH='$PATH:/home/ame/.cabal/bin:/home/ame/.ghcup/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin'
