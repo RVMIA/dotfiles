@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -6,6 +6,9 @@
   home.username = "ame";
   home.homeDirectory = "/home/ame";
 
+  home.activation = { };
+
+  fonts.fontconfig.enable = true;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -21,6 +24,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     pkgs.neovim
+    pkgs.neovide
     pkgs.git
     pkgs.gh
 
@@ -29,7 +33,6 @@
     pkgs.xmobar
     pkgs.alacritty
     pkgs.rofi
-    pkgs.terminus-nerdfont
     pkgs.nitrogen
 
     pkgs.xfce.thunar
@@ -39,7 +42,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" "Iosevka" "Terminus" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
