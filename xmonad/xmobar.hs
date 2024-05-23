@@ -8,7 +8,7 @@ Config { font         = "Terminess Nerd Font"
        , lowerOnStart = True
        , sepChar      = "%"
        , alignSep     = "}{"
-       , template     = "%XMonadLog% }{ %playing% | %packages% | %multicpu% | RAM: %memory% | %dynnetwork% | %KDFW% | <fc=#6e18cc>%date%</fc> "
+       , template     = "%XMonadLog% }{ %playing% | %multicpu% | RAM: %memory% | %dynnetwork% | %KDFW% | <fc=#6e18cc>%date%</fc> "
        , commands     = [ Run DynNetwork [ "--template" , "Up: <tx>kB/s | Down: <rx>kB/s"
                                          , "--Low"      , "1000"       -- units: kB/s
                                          , "--High"     , "5000"       -- units: kB/s
