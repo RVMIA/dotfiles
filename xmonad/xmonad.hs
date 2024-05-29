@@ -17,7 +17,7 @@ import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 
 myTerm :: String
-myTerm = "st"
+myTerm = "alacritty"
 
 
 myFM :: String
