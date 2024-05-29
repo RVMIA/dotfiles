@@ -9,3 +9,6 @@ ln -s -T /home/ame/dotfiles/alacritty ~/.config/alacritty
 ln -s -T /home/ame/dotfiles/nvim ~/.config/nvim
 ln -s -T /home/ame/dotfiles/zathura ~/.config/zathura
 ln -s -T /home/ame/dotfiles/neofetch ~/.config/neofetch
+
+# Change this out with any other WM
+ln -s -T /home/ame/dotfiles/xinitrc-xmonad ~/.xinitrc

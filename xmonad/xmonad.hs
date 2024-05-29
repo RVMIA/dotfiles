@@ -17,28 +17,14 @@ import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 
 myTerm :: String
-myTerm = "alacritty"
+myTerm = "st"
 
-myScreenResize :: String
-myScreenResize = unwords ["xrandr"
-                        ,"--output DisplayPort-0 --primary"
-                          ,"--mode 1920x1080"
-                          ,"--pos 1920x0"
-                          ,"--rotate normal"
-                        ,"--output HDMI-A-0"
-                          ,"--mode 1920x1080"
-                          ,"--pos 0x0"
-                          ,"--rotate normal"
-                        ,"&"]
 
 myFM :: String
 myFM = "thunar"
 
 mySS :: String
-mySS = concat ["maim -s", " ", ssDir, filename, " ", "&&", " ", myFM, " ", ssDir]
-  where
-    ssDir = "/home/ame/Pictures/screenshots/"
-    filename = "$(date +%s)-screenshot.png"
+mySS = "bash -c ~/dotfiles/scripts/screenshot.sh" 
 
 myColor :: String
 myColor = "#df5714"
@@ -55,14 +41,6 @@ myBorderWidth = 4
 mM :: KeyMask
 mM = mod4Mask
 
--- Startup the window Manager
-myStartupHook :: X ()
-myStartupHook = do
-  spawnOnce myScreenResize
-  spawnOnce "nitrogen --restore &"
-  spawnOnce "setxkbmap -option caps:escape &"
-  spawnOnce "dunst &"
-  spawnOnce "pulseaudio &"
 
 main :: IO ()
 main = xmonad . ewmh . ewmhFullscreen . withEasySB (xmobar1 <> xmobar2) defToggleStrutsKey $ defaults
@@ -80,7 +58,6 @@ myKeys =
   , ((mM .|. shiftMask, xK_s), spawn mySS)
   , ((mM .|. shiftMask, xK_t), spawn myFM)
   , ((mM .|. shiftMask, xK_b), withFocused toggleBorder)
-  , ((mM .|. shiftMask, xK_r), spawn myScreenResize)
   , ((0, xF86XK_AudioPlay) , spawn "playerctl -p spotify play-pause")
   , ((0, xF86XK_AudioPrev) , spawn "playerctl -p spotify previous")
   , ((0, xF86XK_AudioNext) , spawn "playerctl -p spotify next")
@@ -95,7 +72,6 @@ defaults = def
   , normalBorderColor = myNormalBorderColor
   , focusedBorderColor = myFocusedBorderColor
   -- , focusFollowsMouse = False
-  , startupHook = myStartupHook
   , manageHook = myManageHook
   , layoutHook = (lessBorders Screen $ myLayout) 
   } `additionalKeys` myKeys

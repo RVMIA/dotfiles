@@ -5,6 +5,10 @@ bindkey -e
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+bindkey "^H" backward-kill-word
+bindkey "5~" kill-word 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # Autocomplete
 autoload -U compinit 
@@ -41,22 +45,26 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 
-export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
-export CABAL_DIR="$XDG_DATA_HOME"/cabal
-export STACK_ROOT=$HOME/.local/share/stack
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-export ICEAUTHORITY=$HOME/.cache/ICEauthority
-export GNUPGHOME=$HOME/.local/share/gnupg
+export CABAL_CONFIG=$XDG_CONFIG_HOME/cabal/config
+export CABAL_DIR=$XDG_DATA_HOME/cabal
+export STACK_ROOT=$XDG_DATA_HOME/stack
+export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export GHCUP_USE_XDG_DIRS=true
 export W3M_DIR=$XDG_DATA_HOME/w3m
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export GOPATH="$XDG_DATA_HOME"/go
+export PYTHONSTARTUP="/etc/python/pythonrc"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 
 export NIX_REMOTE=daemon
 
 # PATH
 typeset -U path
-export PATH='$PATH:/home/ame/.cabal/bin:/home/ame/.ghcup/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix'
+export PATH='$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix'
 
 
 # Prompt (Same as gentoo prompt but with a lambda)
@@ -65,6 +73,7 @@ unsetopt PROMPT_CR
 unsetopt PROMPT_SP
 
 # aliases
+alias sudo='doas'
 alias ls='ls -lAh --color=always'
 alias grep='grep --color=always'
 alias sz='source $ZDOTDIR/.zshrc'
