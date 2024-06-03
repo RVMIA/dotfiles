@@ -52,8 +52,8 @@ myKeys =
   , ((mM, xK_q), spawn "xmonad --restart")
   , ((mM .|. shiftMask, xK_l), spawn "slock")
   , ((mM .|. shiftMask, xK_p), spawn "spotify")
-  -- , ((mM, xK_p), spawn "dmenu_run")
-  , ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame")
+  , ((mM, xK_p), spawn "dmenu_run")
+  -- , ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame")
   , ((mM .|. shiftMask, xK_d), spawn "discord")
   , ((mM .|. shiftMask, xK_s), spawn mySS)
   , ((mM .|. shiftMask, xK_t), spawn myFM)
@@ -97,14 +97,15 @@ myManageHook =
     [ className =? "Gimp" --> doFloat,
       isDialog --> doFloat,
       className =? "Spotify" --> doShift "9",
-      className =? "discord" --> doShift "9"
-    ]
+      className =? "discord" --> doShift "9",
+      className =? "guitarix" --> doShift "8",
+      className =? "cadence" --> doShift "8"]
 
 
 
 
-xmobar1 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobar.hs" (pure myXMobarPP)
-xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobar.hs" (pure myXMobarPP)
+xmobar1 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobarGap.hs" (pure myXMobarPP)
+xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobarNoGap.hs" (pure myXMobarPP)
 
 myXMobarPP :: PP
 myXMobarPP =

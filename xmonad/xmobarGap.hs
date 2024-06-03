@@ -4,11 +4,12 @@ Config { font         = "Terminess Nerd Font"
        , borderColor  = "#6e18cc"
        , bgColor      = "#0f0f0f"
        , fgColor      = "grey"
-       , position     = TopH 23
+       -- , position     = TopH 24 -- No Tray 
+       , position     = TopSize L 95 24 -- With Tray
        , lowerOnStart = True
        , sepChar      = "%"
        , alignSep     = "}{"
-       , template     = "%XMonadLog% }{ %playing% | %multicpu% | RAM: %memory% | %dynnetwork% | %KDFW% | <fc=#6e18cc>%date%</fc> "
+       , template     = "%XMonadLog% }{ %playing% | %multicpu% | RAM: %memory% | %dynnetwork% | %KDFW% | <fc=#6e18cc>%date%</fc> |"
        , commands     = [ Run DynNetwork [ "--template" , "Up: <tx>kB/s | Down: <rx>kB/s"
                                          , "--Low"      , "1000"       -- units: kB/s
                                          , "--High"     , "5000"       -- units: kB/s

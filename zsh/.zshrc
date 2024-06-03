@@ -73,7 +73,7 @@ unsetopt PROMPT_CR
 unsetopt PROMPT_SP
 
 # aliases
-alias sudo='doas'
+# alias sudo='doas' # need to learn to not rely on sudo tho
 alias ls='ls -lAh --color=always'
 alias grep='grep --color=always'
 alias sz='source $ZDOTDIR/.zshrc'
