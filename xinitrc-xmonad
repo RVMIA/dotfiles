@@ -31,15 +31,17 @@ fi
 # start some nice programs
 
 # for xmonad
-trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --tint 0x101010 --height 24 --transparent true --alpha 0 --monitor 1 &
+trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --tint 0x101010 --height 45 --transparent true --alpha 0 --monitor 1 &
 
-
+nm-applet &
+cbatticon &
 xsetroot -cursor_name left_ptr
 setxkbmap -option caps:escape &
 zsh -c ~/dotfiles/scripts/screenlayout.sh &
 nitrogen --restore &
 dunst &
 pulseaudio &
+pasystray -g -m 100 &
 exec dbus-launch --exit-with-session xmonad
 
 #nscde

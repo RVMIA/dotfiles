@@ -1,11 +1,11 @@
-Config { font         = "Terminess Nerd Font"
+Config { font         = "Terminess Nerd Font 18"
        , textOffset   = 1
        , border       = BottomBM 1
        , borderColor  = "#6e18cc"
        , bgColor      = "#0f0f0f"
        , fgColor      = "grey"
        -- , position     = TopH 24 -- No Tray 
-       , position     = TopSize L 95 24 -- With Tray
+       , position     = TopSize L 90 45 -- With Tray
        , lowerOnStart = True
        , sepChar      = "%"
        , alignSep     = "}{"

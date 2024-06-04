@@ -58,6 +58,9 @@ myKeys =
   , ((mM .|. shiftMask, xK_s), spawn mySS)
   , ((mM .|. shiftMask, xK_t), spawn myFM)
   , ((mM .|. shiftMask, xK_b), withFocused toggleBorder)
+  -- , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+  -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
+  -- , ((0, xF86XK_AudioRaiseVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%")
   , ((0, xF86XK_AudioPlay) , spawn "playerctl -p spotify play-pause")
   , ((0, xF86XK_AudioPrev) , spawn "playerctl -p spotify previous")
   , ((0, xF86XK_AudioNext) , spawn "playerctl -p spotify next")
@@ -105,7 +108,8 @@ myManageHook =
 
 
 xmobar1 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobarGap.hs" (pure myXMobarPP)
-xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobarNoGap.hs" (pure myXMobarPP)
+xmobar2 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobarGap.hs" (pure myXMobarPP)
+-- xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobarNoGap.hs" (pure myXMobarPP)
 
 myXMobarPP :: PP
 myXMobarPP =
