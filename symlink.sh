@@ -15,4 +15,4 @@ ln -s -T /home/ame/dotfiles/.Xdefaults ~/.Xdefaults
 doas ln -s -T /home/ame/dotfiles/dmenu-5.3 /etc/portage/savedconfig/x11-misc/dmenu-5.3
 
 # Change this out with any other WM
-ln -s -T /home/ame/dotfiles/xinitrc-xmonad ~/.xinitrc
+ln -s -T /home/ame/dotfiles/xinitrc ~/.xinitrc
