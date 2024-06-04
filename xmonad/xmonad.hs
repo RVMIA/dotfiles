@@ -107,9 +107,8 @@ myManageHook =
 
 
 
-xmobar1 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobarGap.hs" (pure myXMobarPP)
-xmobar2 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobarGap.hs" (pure myXMobarPP)
--- xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobarNoGap.hs" (pure myXMobarPP)
+xmobar1 = statusBarProp "xmobar -x 0 $HOME/.config/xmonad/xmobar.hs" (pure myXMobarPP)
+xmobar2 = statusBarProp "xmobar -x 1 $HOME/.config/xmonad/xmobar.hs" (pure myXMobarPP)
 
 myXMobarPP :: PP
 myXMobarPP =
