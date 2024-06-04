@@ -9,17 +9,17 @@ Config { font         = "Terminess Nerd Font 18"
        , lowerOnStart = True
        , sepChar      = "%"
        , alignSep     = "}{"
-       , template     = "%XMonadLog% }{ %playing% | %multicpu% | 🐏 %memory% | %dynnetwork% | %KDFW% | <fc=#6e18cc>%date%</fc> |             "
-       , commands     = [ Run DynNetwork [ "--template" , "⬆️: <tx>k/s ⬇️: <rx>k/s"
+       , template     = "%XMonadLog% }{ %playing%  %multicpu%  %memory%  %dynnetwork%  %KDFW% <fc=#7e18cc>%date%</fc>"
+       , commands     = [ Run DynNetwork [ "--template" , "⬆️ <tx>k/s ⬇️ <rx>k/s"
                                          , "--Low"      , "1000"       -- units: kB/s
                                          , "--High"     , "5000"       -- units: kB/s
                                          , "--low"      , "darkgreen"
                                          , "--normal"   , "darkorange"
                                          , "--high"     , "darkred"
                                          ] 10
-                        , Run MultiCpu ["autosystem", "autobar"] 50
+                        , Run MultiCpu ["-t","🥔 <total>%"] 50
                         , Run Weather "KDFW" ["-t", "<skyCondition> <tempF> deg.", "-L", "50", "-H", "90", "--normal", "grey", "--high", "#de5e5e", "--low", "lightblue"] 36000
-                        , Run Memory ["-t","<used> Gb", "-d", "1", "--", "--scale", "1024"] 50
+                        , Run Memory ["-t","🐏 <used> Gb", "-d", "1", "--", "--scale", "1024"] 50
                         , Run Date "%a %m/%d %I:%M" "date" 10
                         , Run Com "/bin/bash" ["-c", "~/dotfiles/scripts/spotify.sh"] "playing" 10
                         , Run XMonadLog

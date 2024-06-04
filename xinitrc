@@ -31,7 +31,7 @@ fi
 # start some nice programs
 
 # for xmonad
-trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --tint 0x101010 --height 45 --transparent true --alpha 0 --monitor 1 &
+trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --tint 0x101010 --height 43 --transparent true --alpha 0 --monitor 1 &
 
 nm-applet &
 cbatticon &
