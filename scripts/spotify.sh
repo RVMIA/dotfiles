@@ -12,5 +12,6 @@ if [ -n "$(pidof spotify)" ]; then
     length=$(playerctl -p spotify metadata mpris:length | sed 's/.\{6\}$//')
     percent=$((position * 100 / length))
     
-    echo -n "$artist - $song - $percent% - $status"
+    # echo -n "$status $artist - $song - $percent%"
+    echo -n "<action=\`./dotfiles/scripts/spotify-notif.sh\`>$status</action> $percent%"
 fi

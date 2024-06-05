@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.WindowSwallowing
+import XMonad.Hooks.DynamicLog
 import XMonad.Layout.Drawer
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.NoBorders
@@ -127,7 +128,7 @@ myXMobarPP =
     formatFocused = wrap (white "[") (white "]") . wal . ppWindow
     formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . grey . ppWindow
     ppWindow :: String -> String
-    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 10
+    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten' "" 5
     blue, lowWhite, magenta, red, white, yellow, wal, grey, green :: String -> String
     magenta = xmobarColor "#ff79c6" ""
     blue = xmobarColor "#bd93f9" ""
