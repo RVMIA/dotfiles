@@ -125,7 +125,8 @@ myXMobarPP =
       -- ppHiddenNoWindows = lowWhite . wrap "" "", -- IF YOU WANT ALL WORKSPACES ON THE BAR
       ppHiddenNoWindows = const "", -- OR ONLY SHOW POPULATED WORKSPACES
       ppUrgent = red . wrap (yellow "!") (yellow "!"),
-      ppOrder = \[ws, l, _, wins] -> [wrap " " "" ws, pad l, unwords $ take 4 $ words wins],
+      -- ppOrder = \[ws, l, _, wins] -> [wrap " " "" ws, pad l, unwords $ take 4 $ words wins],
+      ppOrder = \[ws, l, _, wins] -> [wrap " " "" ws, pad l, wins],
       ppExtras = [logTitles formatFocused formatUnfocused]
     }
   where
