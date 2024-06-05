@@ -17,7 +17,7 @@ Config { font         = "Terminess Nerd Font 18"
                                          , "--normal"   , "darkorange"
                                          , "--high"     , "darkred"
                                          ] 10
-                        , Run MultiCpu ["-t","🥔 <total>%"] 50
+                        , Run MultiCpu ["-t","<action=`alacritty -e htop`>🥔 <total>%</action>"] 50
                         , Run WeatherX "KDFW"
                         [ ("clear", "☀️")
                         , ("sunny", "☀️")
@@ -30,10 +30,10 @@ Config { font         = "Terminess Nerd Font 18"
                         , ("partly cloudy", "⛅")
                         , ("mostly cloudy", "🌧")
                         , ("considerable cloudiness", "⛈")]
-                        ["-t", "<fn=2><skyConditionS></fn> <tempF>°"
+                        ["-t", "<action=`alacritty --hold -e curl wttr.in/?0 | less`><fn=2><skyConditionS></fn> <tempF>°</action>"
                         , "-L","50", "-H", "90", "--normal", "grey"
                         , "--high", "#de5e5e", "--low", "lightblue"] 18000
-                        , Run Memory ["-t","🐏 <used> Gb", "-d", "1", "--", "--scale", "1024"] 50
+                        , Run Memory ["-t","<action=`alacritty -e htop`>🐏 <used> Gb</action>", "-d", "1", "--", "--scale", "1024"] 50
                         , Run Date "%a %m/%d %I:%M" "date" 10
                         , Run Com "/bin/bash" ["-c", "~/dotfiles/scripts/spotify.sh"] "playing" 10
                         , Run XMonadLog
