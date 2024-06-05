@@ -8,7 +8,7 @@ if [ -n "$(pidof spotify)" ]; then
     song="${song:0:30}"
 
     position=$(playerctl -p spotify position | cut -f 1 -d '.')
-    status=$(playerctl -p spotify status)
+    status=$(playerctl -p spotify status | sed "s/Paused/⏸️/;s/Playing/▶️/")
     length=$(playerctl -p spotify metadata mpris:length | sed 's/.\{6\}$//')
     percent=$((position * 100 / length))
     
