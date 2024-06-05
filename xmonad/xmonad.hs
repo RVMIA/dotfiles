@@ -64,7 +64,7 @@ myKeys =
     ((mM .|. shiftMask, xK_t), spawn myFM),
     ((mM, xK_f), spawn "firefox"),
     ((mM, xK_p), spawn "dmenu_run"),
-    ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame"),
+    -- ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame"),
     ((mM, xK_q), spawn "xmonad --restart")
     -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
     -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")

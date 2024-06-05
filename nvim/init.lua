@@ -72,7 +72,7 @@ vim.opt.scrolloff = 10
 -- GUI OPTIONS ONLY -- Neovide
 if vim.g.neovide then
     vim.opt.linespace = 12
-    vim.opt.guifont = 'Iosevka Nerd Font:h18'
+    vim.opt.guifont = 'Iosevka Nerd Font:h12'
     vim.g.neovide_scroll_animation_length = 0
     vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_cursor_trail_size = 0
