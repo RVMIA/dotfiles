@@ -53,6 +53,7 @@ myKeys =
   , ((mM, xK_q), spawn "xmonad --restart")
   , ((mM .|. shiftMask, xK_l), spawn "slock")
   , ((mM .|. shiftMask, xK_p), spawn "spotify")
+  , ((mM .|. shiftMask, xK_m), spawn "sh -c ~/dotfiles/scripts/mansplain.sh")
   , ((mM .|. controlMask, xK_p), spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh")
   , ((mM, xK_p), spawn "dmenu_run")
   -- , ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame")
