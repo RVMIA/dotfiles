@@ -13,7 +13,6 @@ ln -s -T /home/ame/dotfiles/sway ~/.config/sway
 ln -s -T /home/ame/dotfiles/dunst ~/.config/dunst
 
 ln -s -T /home/ame/dotfiles/.Xdefaults ~/.Xdefaults
-doas ln -s -T /home/ame/dotfiles/dmenu-5.3 /etc/portage/savedconfig/x11-misc/dmenu-5.3
 
 # Change this out with any other WM
-ln -s -T /home/ame/dotfiles/xinitrc ~/.xinitrc
+ln -s -T /home/ame/dotfiles/X11 ~/.config/X11

@@ -59,6 +59,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 export NIX_REMOTE=daemon
 
