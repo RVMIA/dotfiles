@@ -1,5 +1,6 @@
 Config
-  { font = "Terminess Nerd Font 18",
+  { font = "Terminess Nerd Font 20",
+    additionalFonts = ["Terminess Nerd Font 24"],
     textOffset = 1,
     border = BottomBM 1,
     borderColor = "#6e18cc",
@@ -10,7 +11,7 @@ Config
     lowerOnStart = True,
     sepChar = "%",
     alignSep = "}{",
-    template = "%XMonadLog% }{%playing% %multicpu% %memory% %dynnetwork% %KDFW% <fc=#7e18cc>%date%</fc>                    ",
+    template = "%XMonadLog% }{%playing% %multicpu% %memory% %dynnetwork% %KDFW%  <fn=1><fc=#7e18cc>%date%</fc></fn>                   ",
     commands =
       [ Run
           DynNetwork

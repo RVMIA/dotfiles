@@ -35,8 +35,8 @@ mM = mod4Mask :: KeyMask
 
 myXmobar = x1 <> x2 :: StatusBarConfig
   where
-    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
-    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
+    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" 
+    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/xmonad/xmobar.hs" 
 
 main :: IO ()
 main =
@@ -53,6 +53,8 @@ myKeys =
     ((0, xF86XK_AudioPlay), spawn "playerctl -p spotify play-pause"),
     ((0, xF86XK_AudioPrev), spawn "playerctl -p spotify previous"),
     ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%"),
+    ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
+    ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
     ((mM .|. controlMask, xK_p), spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
     ((mM .|. shiftMask, xK_b), withFocused toggleBorder),
     ((mM .|. shiftMask, xK_d), spawn "discord"),
