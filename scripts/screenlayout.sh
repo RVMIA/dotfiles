@@ -1,5 +1,4 @@
 #!/bin/sh
-
 HOST=$(hostname)
 XRANDR=$(xrandr -q)
 

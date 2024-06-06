@@ -35,8 +35,8 @@ mM = mod4Mask :: KeyMask
 
 myXmobar = x1 <> x2 :: StatusBarConfig
   where
-    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" 
-    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/xmonad/xmobar.hs" 
+    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
+    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
 
 main :: IO ()
 main =
@@ -61,6 +61,7 @@ myKeys =
     ((mM .|. shiftMask, xK_f), spawn "google-chrome-stable"),
     ((mM .|. shiftMask, xK_l), spawn "slock"),
     ((mM .|. shiftMask, xK_m), spawn "sh -c ~/dotfiles/scripts/mansplain.sh"),
+    ((mM .|. shiftMask, xK_r), spawn "sh -c ~/dotfiles/scripts/screenlayout.sh"),
     ((mM .|. shiftMask, xK_p), spawn "spotify"),
     ((mM .|. shiftMask, xK_s), spawn mySS),
     ((mM .|. shiftMask, xK_t), spawn myFM),
