@@ -11,8 +11,4 @@ ln -s -T /home/ame/dotfiles/zathura ~/.config/zathura
 ln -s -T /home/ame/dotfiles/neofetch ~/.config/neofetch
 ln -s -T /home/ame/dotfiles/sway ~/.config/sway
 ln -s -T /home/ame/dotfiles/dunst ~/.config/dunst
-
-ln -s -T /home/ame/dotfiles/.Xdefaults ~/.Xdefaults
-
-# Change this out with any other WM
 ln -s -T /home/ame/dotfiles/X11 ~/.config/X11
