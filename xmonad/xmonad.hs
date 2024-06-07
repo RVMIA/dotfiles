@@ -31,8 +31,6 @@ myFocusedBorderColor = myColor :: String
 
 myBorderWidth = 4 :: Dimension
 
-mM = mod4Mask :: KeyMask
-
 myXmobar = x1 <> x2 :: StatusBarConfig
   where
     x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
@@ -47,39 +45,30 @@ main =
     $ withEasySB myXmobar defToggleStrutsKey
     $ defaults
 
-myKeys :: [((KeyMask, KeySym), X ())]
+myKeys :: [(String, X ())]
 myKeys =
-  [ ((0, xF86XK_AudioNext), spawn "playerctl -p spotify next"),
-    ((0, xF86XK_AudioPlay), spawn "playerctl -p spotify play-pause"),
-    ((0, xF86XK_AudioPrev), spawn "playerctl -p spotify previous"),
-    ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +1%"),
-    ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
-    ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
-    ((mM .|. controlMask, xK_p), spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
-    ((mM .|. shiftMask, xK_b), withFocused toggleBorder),
-    ((mM .|. shiftMask, xK_d), spawn "discord"),
-    ((mM .|. shiftMask, xK_f), spawn "google-chrome-stable"),
-    ((mM .|. shiftMask, xK_l), spawn "slock"),
-    ((mM .|. shiftMask, xK_m), spawn "sh -c ~/dotfiles/scripts/mansplain.sh"),
-    ((mM .|. shiftMask, xK_r), spawn "sh -c ~/dotfiles/scripts/screenlayout.sh"),
-    ((mM .|. shiftMask, xK_p), spawn "spotify"),
-    ((mM .|. shiftMask, xK_s), spawn mySS),
-    ((mM .|. shiftMask, xK_t), spawn myFM),
-    ((mM, xK_f), spawn "firefox"),
-    ((mM, xK_p), spawn "dmenu_run"),
-    -- ((mM, xK_p), spawn "rofi -show run -theme dmenu_ame"),
-    ((mM, xK_q), spawn "xmonad --restart")
-    -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
-    -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
-    -- , ((0, xF86XK_AudioLowerVolume) , spawn "pactl set-sink-volume @DEFAULT_SINK@ -1%")
-    -- , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    -- , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    -- , ((0, xF86XK_AudioMute) , spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+  [ ("<XF86AudioNext>", spawn "playerctl -p spotify next"),
+    ("<XF86AudioPlay>", spawn "playerctl -p spotify play-pause"),
+    ("<XF86AudioPrev>", spawn "playerctl -p spotify previous"),
+    ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10"),
+    ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10"),
+    ("M-S-n", spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
+    ("M-S-b", withFocused toggleBorder),
+    ("M-S-d", spawn "discord"),
+    ("M-S-l", spawn "slock"),
+    ("M-S-m", spawn "sh -c ~/dotfiles/scripts/mansplain.sh"),
+    ("M-S-p", spawn "spotify"),
+    ("M-S-r", spawn "sh -c ~/dotfiles/scripts/screenlayout.sh"),
+    ("M-S-s", spawn mySS),
+    ("M-S-t", spawn myFM),
+    ("M-f", spawn "firefox"),
+    ("M-p", spawn "dmenu_run"),
+    ("M-q", spawn "xmonad --restart")
   ]
 
 defaults =
   def
-    { modMask = mM,
+    { modMask = mod4Mask,
       terminal = myTerm,
       borderWidth = myBorderWidth,
       normalBorderColor = myNormalBorderColor,
@@ -88,22 +77,14 @@ defaults =
       manageHook = myManageHook,
       layoutHook = (lessBorders Screen $ myLayout)
     }
-    `additionalKeys` myKeys
+    `additionalKeysP` myKeys
 
-myLayout =
-  avoidStruts $
-    tiled
-      ||| Mirror tiled
-      ||| Full
+myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full
 
 tiled =
   renamed [Replace "Tall"] $
     smartSpacingWithEdge 10 $
-      Tall nmaster delta ratio
-  where
-    nmaster = 1
-    ratio = 1 / 2
-    delta = 3 / 100
+      Tall (1) (3 / 100) (1 / 2)
 
 myHandleEventHook = swallowEventHook (className =? "Kitty" <||> className =? "Alacritty") (return True)
 
@@ -121,27 +102,25 @@ myManageHook =
 myXMobarPP :: PP
 myXMobarPP =
   def
-    { ppSep = wal " ",
-      ppTitleSanitize = shorten 10 . xmobarStrip,
-      ppCurrent = xmobarBorder "Top" "#6e18cc" 2,
+    { ppCurrent = xmobarBorder "Top" "#6e18cc" 3,
+      ppExtras = [logTitles formatFocused formatUnfocused],
+      ppHiddenNoWindows = const "",
       ppHidden = white,
-      -- ppHiddenNoWindows = lowWhite . wrap "" "", -- IF YOU WANT ALL WORKSPACES ON THE BAR
-      ppHiddenNoWindows = const "", -- OR ONLY SHOW POPULATED WORKSPACES
-      ppUrgent = red . wrap (yellow "!") (yellow "!"),
-      -- ppOrder = \[ws, l, _, wins] -> [wrap " " "" ws, pad l, unwords $ take 4 $ words wins],
       ppOrder = \[ws, l, _, wins] -> [wrap " " "" ws, pad l, wins],
-      ppExtras = [logTitles formatFocused formatUnfocused]
+      ppSep = " ",
+      ppTitleSanitize = shorten 10 . xmobarStrip
     }
   where
-    formatFocused = wrap (white "[") (white "]") . wal . ppWindow
-    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . grey . ppWindow
+    formatFocused = padB white . wal . ppWindow
+    formatUnfocused = padB lowWhite . grey . ppWindow
+    padB color = wrap (color "[") (color "]")
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 9
-    magenta = xmobarColor "#ff79c6" ""
     blue = xmobarColor "#bd93f9" ""
+    green = xmobarColor "#8ba37d" ""
+    grey = xmobarColor "#8e8e8e" ""
+    lowWhite = xmobarColor "#bbbbbb" ""
+    magenta = xmobarColor "#ff79c6" ""
+    red = xmobarColor "#ff5555" ""
+    wal = xmobarColor myColor ""
     white = xmobarColor "#f8f8f2" ""
     yellow = xmobarColor "#f1fa8c" ""
-    red = xmobarColor "#ff5555" ""
-    lowWhite = xmobarColor "#bbbbbb" ""
-    grey = xmobarColor "#8e8e8e" ""
-    green = xmobarColor "#8ba37d" ""
-    wal = xmobarColor myColor ""
