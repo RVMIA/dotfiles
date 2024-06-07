@@ -56,15 +56,21 @@ myKeys =
     ("M-S-b", withFocused toggleBorder),
     ("M-S-d", spawn "discord"),
     ("M-S-l", spawn "slock"),
-    ("M-S-m", spawn "sh -c ~/dotfiles/scripts/mansplain.sh"),
     ("M-S-p", spawn "spotify"),
     ("M-S-r", spawn "sh -c ~/dotfiles/scripts/screenlayout.sh"),
     ("M-S-s", spawn mySS),
     ("M-S-t", spawn myFM),
     ("M-f", spawn "firefox"),
-    ("M-p", spawn "dmenu_run"),
-    ("M-q", spawn "xmonad --restart")
+    -- ("M-p", spawn "dmenu_run"),
+    ("M-p", spawn (openInTermFloat ++ "sh ~/dotfiles/scripts/dmenu-fzf.sh")),
+    ("M-q", spawn "xmonad --restart"),
+    ("C-x x", spawn (openInTerm ++ "nvim ~/dotfiles/xmonad/xmonad.hs")),
+    ("C-x m", spawn (openInTermFloat ++ "sh -c ~/dotfiles/scripts/mansplain.sh")),
+    ("C-x C-f", spawn (openInTerm ++ "sh -c ~/dotfiles/scripts/fzf-nvim.sh"))
   ]
+  where
+    openInTerm = "alacritty -e "
+    openInTermFloat = "alacritty --class 'ame-term' -e "
 
 defaults =
   def
@@ -73,7 +79,6 @@ defaults =
       borderWidth = myBorderWidth,
       normalBorderColor = myNormalBorderColor,
       focusedBorderColor = myFocusedBorderColor,
-      -- , focusFollowsMouse = False
       manageHook = myManageHook,
       layoutHook = (lessBorders Screen $ myLayout)
     }
@@ -92,6 +97,7 @@ myManageHook :: ManageHook
 myManageHook =
   composeAll
     [ className =? "Gimp" --> doFloat,
+      className =? "ame-term" --> doFloat,
       isDialog --> doFloat,
       className =? "Spotify" --> doShift "9",
       className =? "discord" --> doShift "9",

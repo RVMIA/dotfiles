@@ -2,7 +2,7 @@ return {
     { -- You can easily change to a different colorscheme.
         'catppuccin/nvim',
         name = 'catppuccin',
-        priority = 1000, -- Make sure to load this before all the other start plugins.
+        priority = 1000, -- load before all other start plugins
         config = function()
             require('catppuccin').setup {
                 flavour = 'auto',
@@ -14,7 +14,7 @@ return {
                 show_end_of_buffer = true,
             }
             vim.cmd.hi 'Comment gui=none'
-            vim.cmd.colorscheme 'catppuccin'
+            vim.cmd.colorscheme 'default'
             vim.o.colorcolumn = '80'
         end,
     },
