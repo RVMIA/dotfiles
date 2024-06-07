@@ -10,6 +10,9 @@ elif [[ $HOST = "ameFramework" ]]; then
     elif xrandr -q | grep -q "DisplayPort-2 disconnected"; then 
                     xrandr --output DisplayPort-2 --off
     fi
+else
+    arandr &
+    disown
 fi
 
 

@@ -61,12 +61,10 @@ myKeys =
     ("M-S-s", spawn mySS),
     ("M-S-t", spawn myFM),
     ("M-f", spawn "firefox"),
-    -- ("M-p", spawn "dmenu_run"),
-    ("M-p", spawn (openInTermFloat ++ "sh ~/dotfiles/scripts/dmenu-fzf.sh")),
+    ("M-p", spawn "dmenu_run"),
     ("M-q", spawn "xmonad --restart"),
-    ("C-x x", spawn (openInTerm ++ "nvim ~/dotfiles/xmonad/xmonad.hs")),
-    ("C-x m", spawn (openInTermFloat ++ "sh -c ~/dotfiles/scripts/mansplain.sh")),
-    ("C-x C-f", spawn (openInTerm ++ "sh -c ~/dotfiles/scripts/fzf-nvim.sh"))
+    ("C-x m", spawn ("sh -c ~/dotfiles/scripts/mansplain.sh")),
+    ("C-x C-f", spawn ("sh -c ~/dotfiles/scripts/fzf-nvim.sh"))
   ]
   where
     openInTerm = "alacritty -e "
@@ -96,13 +94,13 @@ myHandleEventHook = swallowEventHook (className =? "Kitty" <||> className =? "Al
 myManageHook :: ManageHook
 myManageHook =
   composeAll
-    [ className =? "Gimp" --> doFloat,
-      className =? "ame-term" --> doFloat,
-      isDialog --> doFloat,
-      className =? "Spotify" --> doShift "9",
+    [ className =? "ame-term" --> doFloat,
+      className =? "cadence" --> doShift "8",
       className =? "discord" --> doShift "9",
+      className =? "Gimp" --> doFloat,
       className =? "guitarix" --> doShift "8",
-      className =? "cadence" --> doShift "8"
+      className =? "Spotify" --> doShift "9",
+      isDialog --> doFloat
     ]
 
 myXMobarPP :: PP
