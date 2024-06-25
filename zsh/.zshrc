@@ -60,6 +60,9 @@ export PYTHONSTARTUP="/etc/python/pythonrc"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
 
 export NIX_REMOTE=daemon
 
