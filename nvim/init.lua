@@ -69,6 +69,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- expand path for :find and the like
+vim.opt.path = vim.opt.path + '**'
+
 -- GUI OPTIONS ONLY -- Neovide
 if vim.g.neovide then
     vim.opt.linespace = 12
