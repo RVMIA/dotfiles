@@ -35,10 +35,10 @@ xset r rate 400 25
 # for xmonad
 trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --tint 0x101010 --height 43 --transparent true --alpha 0 --monitor primary &
 
+xsetroot -cursor_name left_ptr
 ibus-daemon -rxRd &
 nm-applet &
 cbatticon &
-xsetroot -cursor_name left_ptr
 zsh -c ~/dotfiles/scripts/screenlayout.sh &
 nitrogen --restore &
 dunst &

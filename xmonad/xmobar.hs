@@ -59,8 +59,8 @@ Config
             "lightblue"
           ]
           18000,
-        Run Memory ["-t", "<action=`alacritty -e htop`>🐏 <used> Gb</action>", "-d", "1", "--", "--scale", "1024"] 50,
-        Run Date "%a %m/%d %I:%M" "date" 10,
+        Run Memory ["-t", "<action=`alacritty -e htop`>🐏 <used>g</action>", "-d", "1", "--", "--scale", "1024"] 50,
+        Run Com "/bin/bash" ["-c", "LC_ALL=ja_JP.UTF-8 date +\"%A %m/%d/%y %I:%M\""] "date" 10,
         Run Com "/bin/bash" ["-c", "~/dotfiles/scripts/spotify.sh"] "playing" 10,
         Run XMonadLog
       ]

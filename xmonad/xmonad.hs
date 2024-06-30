@@ -52,7 +52,6 @@ myKeys =
     ("<XF86AudioPrev>", spawn "playerctl -p spotify previous"),
     ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10"),
     ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10"),
-    ("M-S-n", spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
     ("M-S-b", withFocused toggleBorder),
     ("M-S-d", spawn "discord"),
     ("M-S-l", spawn "slock"),
@@ -63,8 +62,8 @@ myKeys =
     ("M-f", spawn "firefox"),
     ("M-p", spawn "dmenu_run"),
     ("M-q", spawn "xmonad --restart"),
-    ("C-x m", spawn ("sh -c ~/dotfiles/scripts/mansplain.sh")),
-    ("C-x C-f", spawn ("sh -c ~/dotfiles/scripts/fzf-nvim.sh"))
+    ("C-x p", spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
+    ("C-x a", spawn "anki"),
   ]
   where
     openInTerm = "alacritty -e "

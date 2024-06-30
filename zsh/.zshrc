@@ -45,6 +45,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_RUNTIME_DIR=/run/user/$UID
 
+export XCURSOR_PATH='/home/ame/.local/share/icons'
+
 export CABAL_CONFIG=$XDG_CONFIG_HOME/cabal/config
 export CABAL_DIR=$XDG_DATA_HOME/cabal
 export STACK_ROOT=$XDG_DATA_HOME/stack
