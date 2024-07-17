@@ -30,7 +30,6 @@ fi
 # start some nice programs
 
 xhost +local:
-setxkbmap -option caps:escape &
 xset r rate 400 25
 # for xmonad
 trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --tint 0x101010 --height 43 --transparent true --alpha 0 --monitor primary &
@@ -44,6 +43,7 @@ nitrogen --restore &
 dunst &
 pulseaudio &
 pasystray -g -m 100 &
+setxkbmap -option caps:escape &
 exec dbus-launch --exit-with-session xmonad
 
 #nscde
