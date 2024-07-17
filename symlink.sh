@@ -9,6 +9,7 @@ ln -s -T /home/ame/dotfiles/alacritty ~/.config/alacritty
 ln -s -T /home/ame/dotfiles/nvim ~/.config/nvim
 ln -s -T /home/ame/dotfiles/zathura ~/.config/zathura
 ln -s -T /home/ame/dotfiles/neofetch ~/.config/neofetch
+ln -s -T /home/ame/dotfiles/guitarix ~/.config/guitarix
 ln -s -T /home/ame/dotfiles/sway ~/.config/sway
 ln -s -T /home/ame/dotfiles/dunst ~/.config/dunst
 ln -s -T /home/ame/dotfiles/X11 ~/.config/X11

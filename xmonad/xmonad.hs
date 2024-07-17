@@ -63,7 +63,7 @@ myKeys =
     ("M-p", spawn "dmenu_run"),
     ("M-q", spawn "xmonad --restart"),
     ("C-x p", spawn "sh -c ~/dotfiles/scripts/spotify-notif.sh"),
-    ("C-x a", spawn "anki"),
+    ("C-x a", spawn "anki")
   ]
   where
     openInTerm = "alacritty -e "

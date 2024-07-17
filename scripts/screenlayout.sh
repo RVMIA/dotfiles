@@ -30,4 +30,4 @@ else
 fi
 nitrogen --restore &
 
-
+nitrogen --restore &
