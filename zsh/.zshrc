@@ -47,6 +47,7 @@ export XDG_RUNTIME_DIR=/run/user/$UID
 
 export XCURSOR_PATH='/home/ame/.local/share/icons'
 
+export WINEPREFIX=$XDG_CONFIG_HOME/wine
 export CABAL_CONFIG=$XDG_CONFIG_HOME/cabal/config
 export CABAL_DIR=$XDG_DATA_HOME/cabal
 export STACK_ROOT=$XDG_DATA_HOME/stack
@@ -70,7 +71,7 @@ export NIX_REMOTE=daemon
 
 # PATH
 typeset -U path
-export PATH='$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix'
+export PATH='$PATH:/etc/eselect/wine/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix'
 
 
 # Prompt (Same as gentoo prompt but with a lambda)
