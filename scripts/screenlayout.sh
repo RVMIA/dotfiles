@@ -3,7 +3,7 @@ HOST=$(hostname)
 XRANDR=$(xrandr -q)
 
 if [[ $HOST = "ame" ]]; then
-    xrandr \ 
+    xrandr \
         --output DisplayPort-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal \
         --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal 
 elif [[ $HOST = "ameFramework" ]]; then
