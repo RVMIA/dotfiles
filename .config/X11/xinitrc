@@ -1,0 +1,48 @@
+#!/bin/sh
+
+ERRFILE=$XDG_CACHE_HOME/X11/xsession-errors
+
+userresources=$XDG_CONFIG_HOME/X11/xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/Xresources
+sysmodmap=/etc/X11/xinit/Xmodmap
+
+# merge in defaults and keymaps
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+
+
+
+# start some nice programs
+
+xhost +local:
+xset r rate 400 25
+# for xmonad
+trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 20 --tint 0x101010 --height 43 --transparent true --alpha 0 --monitor primary &
+
+xsetroot -cursor_name left_ptr
+ibus-daemon -rxRd &
+nm-applet &
+# cbatticon &
+zsh -c ~/dotfiles/scripts/screenlayout.sh &
+nitrogen --restore &
+dunst &
+pulseaudio &
+pasystray -g -m 100 &
+setxkbmap -option caps:escape &
+exec dbus-launch --exit-with-session xmonad
+

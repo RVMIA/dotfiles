@@ -1,0 +1,1 @@
+/usr/sbin/jackd -dalsa -dhw:CODEC

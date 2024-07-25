@@ -1,0 +1,41 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.5
+ **/
+* {
+    background-color: #0f0f0f;
+    border-color:     #6e18cc;
+    text-color:       #808080;
+    highlight:none;
+}
+window {
+    width:    100.0000% ;
+    padding:  1px ;
+    anchor:   north;
+    location: north;
+    children: [ "horibox" ];
+}
+horibox {
+    orientation: horizontal;
+    children:    [ "entry","listview" ];
+}
+listview {
+    layout:  horizontal;
+    spacing: 5px ;
+    lines:   100;
+}
+entry {
+    width:  33.0000em ;
+    expand: false;
+}
+element {
+    padding: 0px 5px ;
+}
+element selected {
+    background-color: #6e18cc;
+    text-color: #ffffff;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
