@@ -85,6 +85,8 @@ alias ls='ls -lAh --color=always'
 alias grep='grep --color=always'
 alias sz='source $ZDOTDIR/.zshrc'
 alias packagelist="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n | numfmt --to=iec-i"
-neofetch # run neofetch upon shell startup
+
+
+#neofetch # run neofetch upon shell startup
 
 

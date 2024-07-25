@@ -20,3 +20,4 @@
 .config/pavucontrol.ini
 .config/wine
 .config/gtk-2.0
+.config/tmux/plugins
