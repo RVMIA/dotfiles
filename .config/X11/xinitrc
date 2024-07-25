@@ -38,11 +38,11 @@ xsetroot -cursor_name left_ptr
 ibus-daemon -rxRd &
 nm-applet &
 # cbatticon &
-zsh -c ~/dotfiles/scripts/screenlayout.sh &
-nitrogen --restore &
+zsh -c ~/dotfiles/.config/scripts/screenlayout.sh &
 dunst &
 pulseaudio &
 pasystray -g -m 100 &
 setxkbmap -option caps:escape &
+zsh -c ~/dotfiles/.config/scripts/fehbg.sh &
 exec dbus-launch --exit-with-session xmonad
 

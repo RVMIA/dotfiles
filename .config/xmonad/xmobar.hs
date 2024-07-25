@@ -43,8 +43,8 @@ Config
           18000,
         Run Memory ["-t", "<action=`alacritty -e htop`>🐏 <used>g</action>", "-d", "1", "--", "--scale", "1024"] 50,
         Run Com "/bin/sh" ["-c", "LC_ALL=ja_JP.UTF-8 date +\"%a %-m/%-d %-I:%M\""] "date" 10,
-        Run Com "/bin/sh" ["-c", "~/dotfiles/scripts/spotify.sh"] "playing" 10,
-        Run Com "/bin/sh" ["-c", "~/dotfiles/scripts/batt.sh"] "battery" 10,
+        Run Com "/bin/sh" ["-c", "~/dotfiles/.config/scripts/spotify.sh"] "playing" 10,
+        Run Com "/bin/sh" ["-c", "~/dotfiles/.config/scripts/batt.sh"] "battery" 10,
         Run XMonadLog
       ]
   }

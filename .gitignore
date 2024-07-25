@@ -19,3 +19,4 @@
 .config/QtProject.conf
 .config/pavucontrol.ini
 .config/wine
+.config/gtk-2.0

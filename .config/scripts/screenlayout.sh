@@ -35,5 +35,5 @@ else
     arandr &
     disown
 fi
-nitrogen --restore &
+sh -c "./fehbg.sh"
 setxkbmap -option caps:escape

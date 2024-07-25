@@ -23,7 +23,7 @@ myTerm = "alacritty" :: String
 
 myFM = "thunar" :: String
 
-mySS = "bash -c ~/dotfiles/scripts/screenshot.sh" :: String
+mySS = "bash -c ~/dotfiles/.config/scripts/screenshot.sh" :: String
 
 myColor = "#df5714" :: String
 
@@ -35,8 +35,8 @@ myBorderWidth = 4 :: Dimension
 
 myXmobar = x1 <> x2 :: StatusBarConfig
   where
-    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
-    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/xmonad/xmobar.hs" (pure myXMobarPP)
+    x1 = statusBarProp "xmobar -x 0 ~/dotfiles/.config/xmonad/xmobar.hs" (pure myXMobarPP)
+    x2 = statusBarProp "xmobar -x 1 ~/dotfiles/.config/xmonad/xmobar.hs" (pure myXMobarPP)
 
 main :: IO ()
 main =
@@ -58,7 +58,7 @@ myKeys =
     ("M-S-d", spawn "discord"),
     ("M-S-l", spawn "slock"),
     ("M-S-p", spawn "spotify"),
-    ("M-S-r", spawn "sh -c ~/dotfiles/scripts/screenlayout.sh"),
+    ("M-S-r", spawn "sh -c ~/dotfiles/.config/scripts/screenlayout.sh"),
     ("M-S-s", spawn mySS),
     ("M-S-t", spawn myFM),
     ("M-f", spawn "firefox"),
