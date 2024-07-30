@@ -11,10 +11,10 @@ import XMonad.Hooks.WindowSwallowing
 import XMonad.Layout.Drawer
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Renamed
 import XMonad.Layout.NoFrillsDecoration
-import XMonad.Layout.Tabbed
+import XMonad.Layout.Renamed
 import XMonad.Layout.Spacing
+import XMonad.Layout.Tabbed
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
@@ -85,16 +85,22 @@ defaults =
 myLayout = lessBorders Screen $ avoidStruts $ tiled ||| mtiled ||| full
 
 winDeco = noFrillsDeco shrinkText winDecoConfig
-winDecoConfig = def { activeBorderColor = "#df5714"
-                 , activeTextColor = "#dcdad7"
-                 , activeColor = "#df5714"
-                 , inactiveColor = "#1d2021"
-                 , inactiveBorderColor = "#1d2021"
-                 , inactiveTextColor = "#5b5e5e"
-                 }
+
+winDecoConfig =
+  def
+    { activeBorderColor = "#df5714",
+      activeTextColor = "#dcdad7",
+      activeColor = "#df5714",
+      inactiveColor = "#1d2021",
+      inactiveBorderColor = "#1d2021",
+      inactiveTextColor = "#5b5e5e",
+      fontName = "xft:Terminess Nerd Font:size=10"
+    }
 
 tiled = renamed [Replace "tall"] $ winDeco $ smartSpacingWithEdge 10 $ Tall (1) (3 / 100) (1 / 2)
+
 mtiled = renamed [Replace "wide"] $ winDeco $ Mirror $ smartSpacingWithEdge 10 $ Tall (1) (3 / 100) (1 / 2)
+
 full = renamed [Replace "full"] $ tabbed shrinkText winDecoConfig
 
 myHandleEventHook = swallowEventHook (className =? "Kitty" <||> className =? "Alacritty") (return True)

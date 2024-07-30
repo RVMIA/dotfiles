@@ -24,3 +24,42 @@ hex(10)
 hex(7fffffffdc80)
 0x73
 73 75 64 6f 30 78 31 38
+2^16
+2^24
+bin
+bin(01010)
+base 
+base(16, 16)
+0xFFFFFFFF
+2^32
+bases 2^31
+bases (2^31)
+bases (1, 2^31)
+bases(1, 2^31)
+hex(2
+hex(15)
+hex(2^31)
+man
+help
+help hex
+TO
+TO hex
+10 TO hex
+10 to hex
+2^32 to hex
+0xFF
+2^32-1 to hex
+2^31-1 to hex
+2^31 to hex
+10 % 0
+37
+37 & 32
+37 nand
+37 && 32
+37 && 22
+48 ^ 22
+48 & 22
+48 && 21
+48 && 22
+48 | 22
+48 || 22

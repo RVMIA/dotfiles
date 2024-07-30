@@ -66,7 +66,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-
+export COWPATH="$COWPATH:$XDG_CONFIG_HOME/cowsay/cowfiles"
 export NIX_REMOTE=daemon
 
 # PATH

@@ -1,44 +1,100 @@
+:i Floating
+:t Floating
+:t logBase
+:t fromInteger 
+:t toInteger 
+toInteger $ floor $ logBase 5 (8 :: Int)
+toInteger $ floor $ logBase 5 (8 :: Int)
+toInteger $ floor $ logBase 5 8
+:t floor $ logBase 5 8
+floor $ logBase 5 8
+logBase 5 8
+:doc floor
+:t floor
+:t 10 / 5^8
+10 / 5^8
+2^8
+2^*
+2^*
+2^
+floor
+logBase 5 10
+logBase 10 100
+logBase 10 1
+logBase 1 10
+:doc logBase
+logBase
+log
 main
 :r
-map head $ group ans
-group ans
-ans
-main
-main
-main
-main
 main
 :r
-:l
 main
+:r
 main
-nub [a | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-import Data.List
-nub [a | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[a | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[1 | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[[a,b,c,d,e,f,g,h] | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[[a,b,c,d,e,f,g,h] | a <- reverse [0..200], b <- reverse [0..100], c <- reverse [0..40], d <- reverse[0..20], e <- reverse [0..10], f <- reverse [0..4], g <- reverse [0..2], h <- reverse[0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[[a,b,c,d,e,f,g,h] | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[filter ((/=) 0) [a,b,c,d,e,f,g,h] | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[[a,b,c,d,e,f,g,h] | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[[a,b,c,d,e,f,g,h] | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-[(a,b,c,d,e,f,g,h) | a <- [0..5], b <- [0..5], c <- [0..5], d <- [0..5], e <- [0..5], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-length [(a,b,c,d,e,f,g,h) | a <- [0..5], b <- [0..5], c <- [0..5], d <- [0..5], e <- [0..5], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-length [(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a + (2 * b) + (5 * c) + (10 * d) + (20 * e) + (50 * f) + (100 * g) + (200 * h) == 200]
-length [(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a+b+c+d+e+f+g+h == 200]
-length [(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1], a+b+c+d+e+f+g+h = 200]
-length [(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1]]
-[(a,b,c,d,e,f,g,h) | a <- [0..200], b <- [0..100], c <- [0..40], d <- [0..20], e <- [0..10], f <- [0..4], g <- [0..2], h <- [0..1]]
-import Data.F
-:doc KeySym
-:kind KeySym
-:kind KeySyn
-:info KeySym
-:t KeySym
-doc shorten
-:doc const
-const
-doc wrap
-wrap
+:r
+words . map (\x -> if (x == ',') then ' ' else x) . head . lines <$> readFile "0081_matrix.txt" 
+map (\x -> if (x == ',') then ' ' else x) . head . lines <$> readFile "0081_matrix.txt" 
+(\x -> if (x == ',') then ' ' else x) . head . lines <$> readFile "0081_matrix.txt" 
+:doc words
+unwords . head . lines <$> readFile "0081_matrix.txt" 
+words . head . lines <$> readFile "0081_matrix.txt" 
+:doc splitAt 
+splitAt 
+splitAt ',' . head . lines <$> readFile "0081_matrix.txt" 
+splitAt ',' . head . lines <$> readFile "0081_matrix.txt" 
+splitAt ',' $ head . lines <$> readFile "0081_matrix.txt" 
+head . lines <$> readFile "0081_matrix.txt" 
+map length . head . lines <$> readFile "0081_matrix.txt" 
+map length . lines <$> readFile "0081_matrix.txt" 
+length . lines <$> readFile "0081_matrix.txt" 
+length $ lines <$> readFile "0081_matrix.txt" 
+lenth $ lines <$> readFile "0081_matrix.txt" 
+lines <$> readFile "0081_matrix.txt" 
+readFile "0081_matrix.txt" 
+main
+[(a,b) | a <- [10..99], b <- [10..99], a `mod` 11 /= 0, b `mod` 11 /= 0, a < b, a`mod`10 /= 0, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a `mod` 11 /= 0, b `mod` 11 /= 0, a < b, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a `mod` 11 /= 0, b `mod` 11 /= 0, cancel a b]
+cancel 11 10
+[(a,b) | a <- [10..99], b <- [10..99],  cancel a b]
+cancel 10 11
+cancel 10 21
+cancel 10 20
+[(a,b) | a <- [10..99], b <- [10..99], cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], ,  cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], b `mod` 11 /= 0,  cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], b `mod` 11 /= 0,  cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, b `mod` 11 /= 0,  cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, b `mod` 11 /= 0,  cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, b `mod` 11 /= 0,  cancel a b]
+:r
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b, b]
+cancel 10 11
+:r
+10/11
+cancel 10 11
+cancel 10 10
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, a `mod` 10 /= 0, b `mod` 10 /= 0, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, a `mod` 10 == 0, b `mod` 10 == 0, cancel a b]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, a `mod` 10 == 0, cancel a b]
+cancel 10 11
+cancel 10 10
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b, a `mod` 10 /= 0]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b, a `mod` 10 /= 0]
+[(a,b) | a <- [10..99], b <- [10..99], a < b, cancel a b, a `mod` 10 /= 0]
+cancel 49 98
+cancel 49 97
+cancel 13 65
+:r
+cancel 13 65
+:r
+cancel 13 65
+cancel 49 98
+:r
+cancel 49 98
+:r
+cancel 49 98
+:r
