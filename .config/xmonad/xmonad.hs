@@ -94,7 +94,7 @@ winDecoConfig =
       inactiveColor = "#1d2021",
       inactiveBorderColor = "#1d2021",
       inactiveTextColor = "#5b5e5e",
-      fontName = "xft:Terminess Nerd Font:size=10"
+      fontName = "xft:Terminess Nerd Font:size=18"
     }
 
 tiled = renamed [Replace "tall"] $ winDeco $ smartSpacingWithEdge 10 $ Tall (1) (3 / 100) (1 / 2)
