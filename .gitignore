@@ -23,3 +23,5 @@
 .config/tmux/plugins
 .config/cowsay
 .config/sublime-text
+.config/gf
+.config/fasm

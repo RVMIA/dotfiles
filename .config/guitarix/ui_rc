@@ -1,6 +1,6 @@
 {
   "system.mainwin_visible": 0,
-  "system.mainwin_x": 0,
+  "system.mainwin_x": 1920,
   "system.mainwin_y": 65,
   "system.mainwin_height": 1015,
   "system.mainwin_rack_height": 1015,
@@ -8,7 +8,7 @@
   "system.mul_buffer": 1,
   "ui.skin_name": "Burl",
   "ui.latency_nowarn": 0,
-  "system.order_rack_h": 1,
+  "system.order_rack_h": 0,
   "system.show_value": 1,
   "system.show_tooltips": 1,
   "system.animations": 1,
