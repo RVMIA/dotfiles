@@ -37,12 +37,14 @@ trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --
 xsetroot -cursor_name left_ptr
 ibus-daemon -rxRd &
 nm-applet &
-# cbatticon &
-zsh -c ~/dotfiles/.config/scripts/screenlayout.sh &
+cbatticon &
+zsh -c ~/dotfiles/scripts/screenlayout.sh &
 dunst &
 pulseaudio &
+birdtray &
 pasystray -g -m 100 &
 setxkbmap -option caps:escape &
-zsh -c ~/dotfiles/.config/scripts/fehbg.sh &
+zsh -c ~/dotfiles/scripts/fehbg.sh &
+xinput set-prop 12 335 0 &
 exec dbus-launch --exit-with-session xmonad
 

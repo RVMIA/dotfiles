@@ -22,6 +22,7 @@ unsetopt correctall
 ## ghcup-env
 [ -f "/home/ame/.local/share/ghcup/env" ] && source "/home/ame/.local/share/ghcup/env" 
 
+
 ## Shell History
 setopt share_history
 setopt inc_append_history_time
@@ -62,6 +63,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export SBCL_HOME=/usr/lib64/sbcl
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
@@ -69,12 +71,17 @@ export XMODIFIERS=@im=ibus
 export COWPATH="$COWPATH:$XDG_CONFIG_HOME/cowsay/cowfiles"
 export NIX_REMOTE=daemon
 
+export CLANG_PATH="/usr/lib/llvm/18/bin"
+
 # PATH
 typeset -U path
-export PATH='$PATH:/usr/lib/llvm/18/bin:/etc/eselect/wine/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/17/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix'
+export PATH='$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix:/home/ame/.local/share/flatpak/exports/bin'
+path+=('/etc/eselect/wine/bin')
+path+=($CLANG_PATH)
 
 
 # Prompt (Same as gentoo prompt but with a lambda)
+# PROMPT="%B%F{green}%n@%m%f %F{blue}%~ λ%f%b "
 PROMPT="%B%F{green}%n@%m%f %F{blue}%~ λ%f%b "
 unsetopt PROMPT_CR
 unsetopt PROMPT_SP
@@ -90,3 +97,11 @@ alias packagelist="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sor
 #neofetch # run neofetch upon shell startup
 
 
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/ame/.opam/opam-init/init.zsh' ]] || source '/home/ame/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

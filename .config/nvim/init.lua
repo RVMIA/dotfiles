@@ -519,6 +519,10 @@ require('lazy').setup({
                     end,
                 },
             }
+            -- Setup hls
+            require('lspconfig')['hls'].setup {
+                filetypes = { 'haskell', 'lhaskell', 'cabal' },
+            }
         end,
     },
     --{
@@ -568,6 +572,7 @@ require('lazy').setup({
                 lua = { 'stylua' },
                 java = { 'clang-format' },
                 c = { 'clang-format' },
+                haskell = { 'fourmolu', 'stylish-haskell' },
 
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
@@ -790,3 +795,6 @@ require('lazy').setup({
         },
     },
 })
+
+-- path for ocaml
+vim.opt.rtp:prepend '~/.opam/default/share/ocp-indent/vim'
