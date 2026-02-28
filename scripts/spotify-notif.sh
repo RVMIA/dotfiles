@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ -n "$(pidof spotify)" ]; then
+if [ -n "$(pidof deadbeef)" ]; then
 
-    artUrl=$(playerctl -p spotify metadata mpris:artUrl)
+    artUrl=$(playerctl -p DeaDBeeF metadata mpris:artUrl)
     artName=$(echo $artUrl | sed 's/.*\///').JPEG
     artName="/tmp/$artName"
 
-    artist=$(playerctl -p spotify metadata artist)
-    song=$(playerctl -p spotify metadata title)
-    album=$(playerctl -p spotify metadata album)
+    artist=$(playerctl -p DeaDBeeF metadata artist)
+    song=$(playerctl -p DeaDBeeF metadata title)
+    album=$(playerctl -p DeaDBeeF metadata album)
 
 
     curl -s $artUrl --output $artName 
