@@ -1,15 +1,15 @@
 Config
-    { font = "Terminess Nerd Font 18"
-    , border = BottomBM 1
-    , borderColor = "#6e18cc"
-    , bgColor = "#0f0f0f"
+    { font = "Terminess Nerd Font 12"
+    -- , border = BottomBM 1
+    , borderColor = "#0086CA"
+    , bgColor = "#222222"
     , fgColor = "grey"
     , -- , position     = TopH 24 -- No Tray
-      position = TopH 45 -- With Tray
+      position = TopH 30 -- With Tray
     , lowerOnStart = True
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " <fc=#7e18cc>%date%</fc> | %XMonadLog% | %playing% %multicpu% %memory% %dynnetwork% %KDFW% %battery%"
+    , template = " <fc=#005577>%date%</fc> | %XMonadLog% | %playing% %multicpu% %memory% %dynnetwork% %KDFW% %battery%"
     , commands =
         [ Run
             DynNetwork
@@ -52,9 +52,9 @@ Config
             , "--normal"
             , "grey"
             , "--high"
-            , "#de5e5e"
+            , "#cc3333"
             , "--low"
-            , "lightblue"
+            , "#005577"
             ]
             18000
         , Run Memory ["-t", "<action=`alacritty -e htop`>🐏 <used>g</action>", "-d", "1", "--", "--scale", "1024"] 50
