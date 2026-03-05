@@ -7,6 +7,9 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/Xresources
 sysmodmap=/etc/X11/xinit/Xmodmap
 
+xsetroot -cursor_name left_ptr &
+zsh -c ~/dotfiles/scripts/screenlayout.sh &
+
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
@@ -32,19 +35,17 @@ fi
 xhost +local:
 xset r rate 400 25
 # for xmonad
-trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 20 --tint 0x101010 --height 43 --transparent true --alpha 0 --monitor primary &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 20 --tint 0x222222 --height 30 --transparent true --alpha 0 --monitor primary &
 
-xsetroot -cursor_name left_ptr
-ibus-daemon -rxRd &
+# ibus-daemon -rxRd &
 nm-applet &
 cbatticon &
-zsh -c ~/dotfiles/scripts/screenlayout.sh &
 dunst &
-pulseaudio &
-birdtray &
+#birdtray &
 pasystray -g -m 100 &
 setxkbmap -option caps:escape &
 zsh -c ~/dotfiles/scripts/fehbg.sh &
 xinput set-prop 12 335 0 &
+easyeffects -w &
 exec dbus-launch --exit-with-session xmonad
 

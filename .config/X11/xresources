@@ -1,7 +1,8 @@
 *foreground: #c5c8c6
 *background: #1c1e20
 
-Xcursor.theme: Marisa-Kirisame
+Xcursor.theme: Miku Cursor
+Xcursor.size: 56
 
 !! alacritty colors
 *color0: #1d1f21

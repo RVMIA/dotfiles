@@ -1,4 +1,4 @@
-# Created by ame for 5.9
+# Created by rvmia for 5.9
 
 # Keybinds
 bindkey -e
@@ -19,8 +19,7 @@ unsetopt correctall
 
 # Environment Variables
 
-## ghcup-env
-[ -f "/home/ame/.local/share/ghcup/env" ] && source "/home/ame/.local/share/ghcup/env" 
+# [ -f "/home/rvmia/.local/share/ghcup/env" ] && source "/home/rvmia/.local/share/ghcup/env" 
 
 
 ## Shell History
@@ -46,7 +45,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_RUNTIME_DIR=/run/user/$UID
 
-export XCURSOR_PATH='/home/ame/.local/share/icons'
+export XCURSOR_PATH='/home/rvmia/.local/share/icons'
 
 export WINEPREFIX=$XDG_CONFIG_HOME/wine
 export CABAL_CONFIG=$XDG_CONFIG_HOME/cabal/config
@@ -65,17 +64,18 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 export SBCL_HOME=/usr/lib64/sbcl
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export COWPATH="$COWPATH:$XDG_CONFIG_HOME/cowsay/cowfiles"
-export NIX_REMOTE=daemon
+# export NIX_REMOTE=daemon
 
 export CLANG_PATH="/usr/lib/llvm/18/bin"
 
 # PATH
 typeset -U path
-export PATH='$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.local/bin:/home/ame/.local/share/cargo/bin:/home/ame/.cargo/bin:/home/ame/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix:/home/ame/.local/share/flatpak/exports/bin'
+export PATH='$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/home/rvmia/.local/bin:/home/rvmia/.local/share/cargo/bin:/home/rvmia/.local/bin:/home/rvmia/.local/share/cargo/bin:/home/rvmia/.cargo/bin:/home/rvmia/.local/share/cargo/bin:/var/lib/flatpak/exports/bin:/nix:/home/rvmia/.local/share/flatpak/exports/bin'
+path+=('/home/rvmia/.local/share/cabal/bin/')
 path+=('/etc/eselect/wine/bin')
 path+=($CLANG_PATH)
 
@@ -88,13 +88,15 @@ unsetopt PROMPT_SP
 
 # aliases
 # alias sudo='doas' # need to learn to not rely on sudo tho
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 alias ls='ls -lAh --color=always'
 alias grep='grep --color=always'
 alias sz='source $ZDOTDIR/.zshrc'
-alias packagelist="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n | numfmt --to=iec-i"
+alias zathura='zathura --fork'
+# alias packagelist="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n | numfmt --to=iec-i"
+alias  linoffice='/home/rvmia/.local/bin/linoffice/linoffice.sh'
 
-
-#neofetch # run neofetch upon shell startup
+neofetch # run neofetch upon shell startup
 
 
 
@@ -103,5 +105,6 @@ alias packagelist="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sor
 #   - the correct directories to the PATH
 #   - auto-completion for the opam binary
 # This section can be safely removed at any time if needed.
-[[ ! -r '/home/ame/.opam/opam-init/init.zsh' ]] || source '/home/ame/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+[[ ! -r '/home/rvmia/.opam/opam-init/init.zsh' ]] || source '/home/rvmia/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+

@@ -2,12 +2,15 @@ set font	"Iosevka 14"
 set adjust-open	"width"
 set guioptions s	
 
-set default-bg	"#0f0f0f"
-set inputbar-bg	"#0f0f0f"
-set statusbar-bg	"#0f0f0f"
+set default-bg	"#1d2021"
+set inputbar-bg	"#1d2021"
+set statusbar-bg	"#1d2021"
 
 set recolor true
 set recolor-keephue true
 set recolor-reverse-video false
-set recolor-lightcolor "#0f0f0f"
+set recolor-lightcolor "#1d2021"
 set recolor-darkcolor "#ffffff"
+
+set selection-clipboard clipboard
+

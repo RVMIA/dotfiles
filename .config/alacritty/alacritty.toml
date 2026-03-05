@@ -18,4 +18,4 @@ family = "Terminess Nerd Font"
 style = "Regular"
 
 [window]
-opacity = 0.97
+# opacity = 0.97
